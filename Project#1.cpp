@@ -17,8 +17,8 @@ int main()
     else if (unit == "meters")
     {
        //This is just feet from above converted to meters
-        muzzle_velocity *= 0.0929;
-        target_distance *= 0.0929;
+        muzzle_velocity *= 3.28;
+        target_distance *= 3.28;
     }
 //user enters the velocity (v_0) muzzle launches at
     cout << "Enter muzzle velocity: ";
@@ -40,7 +40,7 @@ int main()
     //distance traveled given by (V^2*sin(2*alpha)/g)
     double x_distance = (((muzzle_velocity * muzzle_velocity) * sin(2 * alpha_rad)) / g);
     // the max range is also given by the same equation as the distance traveled but at an optimal launch angle of 45 degrees
-    double max_range = (((muzzle_velocity * muzzle_velocity) * sin(2 * 45.0 )) / g);
+    double max_range = (((muzzle_velocity * muzzle_velocity) * sin(2 * 45.0 * alpha_rad )) / g);
     //if the enterd target range is within the max range
     bool within_range = target_distance <= max_range;
 
